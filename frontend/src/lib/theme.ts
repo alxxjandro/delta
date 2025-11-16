@@ -2,6 +2,7 @@ import { createTheme } from '@mantine/core'
 
 export const theme = createTheme({
   fontFamily: 'Inter, sans-serif',
+
   colors: {
     primary: [
       '#e0f2fe',
@@ -15,6 +16,7 @@ export const theme = createTheme({
       '#0c4a6e',
       '#082f49',
     ],
+
     gray: [
       '#f8fafc',
       '#f1f5f9',
@@ -27,6 +29,7 @@ export const theme = createTheme({
       '#1e293b',
       '#0f172a',
     ],
+
     accent: [
       '#f3e8ff',
       '#e9d5ff',
@@ -40,5 +43,8 @@ export const theme = createTheme({
       '#3b0764',
     ],
   },
+
   primaryColor: 'primary',
+
+  defaultRadius: 'md',
 })

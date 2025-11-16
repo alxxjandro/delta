@@ -7,9 +7,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MantineProvider } from '@mantine/core'
 import { theme } from './lib/theme'
 import './index.css'
+import '@mantine/core/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <MantineProvider theme={theme} defaultColorScheme="dark">
+  <MantineProvider theme={theme}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />

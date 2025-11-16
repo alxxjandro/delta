@@ -24,19 +24,21 @@ export default function Login() {
 
   return (
     <div>
-      <h1>Welcome to the login page!</h1>
-      {user ? (
-        <div>
-          <h1>currently logged as {user.userName}</h1>
-          <button onClick={handleLogout}>log out</button>
-        </div>
-      ) : (
-        <div>
-          <h1>no session logged</h1>
-          <button onClick={handleLogin}>login as guest</button>
-        </div>
-      )}
-      <button onClick={handleDashboard}>go to dashboard</button>
+      <div className="flex flex-col align-center justify-center ">
+        <h1 className="text-2xl font-bold">Welcome to delta drive</h1>
+        {user ? (
+          <div>
+            <h1>currently logged as {user.userName}</h1>
+            <button onClick={handleLogout}>log out</button>
+          </div>
+        ) : (
+          <div>
+            <h1>no session logged</h1>
+            <button onClick={handleLogin}>login as guest</button>
+          </div>
+        )}
+        <button onClick={handleDashboard}>go to dashboard</button>
+      </div>
     </div>
   )
 }
