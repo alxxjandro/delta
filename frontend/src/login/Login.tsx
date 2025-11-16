@@ -1,8 +1,18 @@
+import {
+  Paper,
+  TextInput,
+  PasswordInput,
+  Button,
+  Stack,
+  Text,
+  Center,
+  Image,
+  Group,
+} from '@mantine/core'
 import { useNavigate } from 'react-router-dom'
 import useAuthStore from '../zustand/useAuth'
 
 export default function Login() {
-  const user = useAuthStore((state) => state.user)
   const setUser = useAuthStore((state) => state.setUser)
   const navigate = useNavigate()
 
@@ -14,31 +24,29 @@ export default function Login() {
     navigate('/dashboard')
   }
 
-  const handleLogout = () => {
-    setUser(null)
-  }
-
-  const handleDashboard = () => {
-    navigate('/dashboard')
-  }
-
   return (
-    <div>
-      <div className="flex flex-col align-center justify-center ">
-        <h1 className="text-2xl font-bold">Welcome to delta drive</h1>
-        {user ? (
-          <div>
-            <h1>currently logged as {user.userName}</h1>
-            <button onClick={handleLogout}>log out</button>
-          </div>
-        ) : (
-          <div>
-            <h1>no session logged</h1>
-            <button onClick={handleLogin}>login as guest</button>
-          </div>
-        )}
-        <button onClick={handleDashboard}>go to dashboard</button>
-      </div>
-    </div>
+    <Center h="100vh">
+      <Paper withBorder shadow="md" p="xl" radius="md" w={360}>
+        <Stack>
+          <Group justify="space-between">
+            <Text size="xl" fw={600}>
+              Sign in
+            </Text>
+            <Image src="/delta.svg" w={24} />
+          </Group>
+
+          <TextInput label="Email" placeholder="you@example.com" />
+          <PasswordInput label="Password" placeholder="Your password" />
+
+          <Button onClick={handleLogin} fullWidth>
+            Login
+          </Button>
+
+          <Button variant="subtle" fullWidth onClick={() => navigate('/signup')}>
+            Create account
+          </Button>
+        </Stack>
+      </Paper>
+    </Center>
   )
 }
