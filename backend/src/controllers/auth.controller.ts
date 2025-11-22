@@ -7,7 +7,7 @@ export const login = async (req: Request, res: Response) => {
     const { email, password } = req.body
 
     const result = await AuthService({ email, password })
-
+    console.log(result)
     return res.status(200).json({
       success: true,
       message: 'Successful login',

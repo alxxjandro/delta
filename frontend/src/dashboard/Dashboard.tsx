@@ -1,4 +1,4 @@
-import useAuthStore from '../zustand/useAuth'
+import useAuthStore from '../zustand/useAuthStore'
 
 export default function Dashboard() {
   const user = useAuthStore((state) => state.user)

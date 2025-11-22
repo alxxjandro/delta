@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom'
-import useAuthStore from '../zustand/useAuth'
+import useAuthStore from '../zustand/useAuthStore'
 import type { ReactNode } from 'react'
 
 interface PrivateRouteProps {

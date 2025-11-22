@@ -1,4 +1,10 @@
 export interface IUser {
-  userName: string
-  userEmail: string
+  id: string
+  name: string
+  username: string
+  email: string
+}
+
+export interface IAuthUser extends IUser {
+  password: string
 }

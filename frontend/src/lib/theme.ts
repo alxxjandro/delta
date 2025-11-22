@@ -11,10 +11,11 @@ export const theme = createTheme({
       '#a1a1aa',
       '#71717a',
       '#52525b',
+      '#09090b',
       '#3f3f46',
       '#27272a',
       '#18181b',
-      '#09090b',
+      '#000000ff',
     ],
 
     gray: [
@@ -27,7 +28,7 @@ export const theme = createTheme({
       '#525252',
       '#404040',
       '#262626',
-      '#171717',
+      '#ff0000ff',
     ],
 
     accent: [

@@ -34,11 +34,11 @@ export async function AuthService({
   const last = new Date(lastAttempt).getTime()
   const diff = now - last
 
-  if ((user.loginAttempts || 0) >= 5 && diff < COOLDOWN) {
+  if ((user.loginAttempts || 0) >= 50 && diff < COOLDOWN) {
     throw new HttpError('Too many attempts, try again later', 429)
   }
 
-  if ((user.loginAttempts || 0) >= 5 && diff >= COOLDOWN) {
+  if ((user.loginAttempts || 0) >= 50 && diff >= COOLDOWN) {
     await prisma.users.update({
       where: { id: user.id },
       data: { loginAttempts: 0 },

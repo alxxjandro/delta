@@ -3,8 +3,8 @@ import { persist } from 'zustand/middleware'
 import type { IUser } from '../types/Interfaces'
 
 interface AuthState {
-  user: IUser | null
-  setUser: (user: IUser | null) => void
+  user: Partial<IUser> | null
+  setUser: (user: Partial<IUser> | null) => void
 }
 
 const useAuthStore = create<AuthState>()(
