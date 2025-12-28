@@ -1,6 +1,3 @@
-# Drive Clone
+# Delta
 
-Fullstack app with:
-
-- **Frontend:** React + Vite + TypeScript + Tailwind + Mantine
-- **Backend:** Node + Express + TypeScript + Prisma + PostgreSQL
+Fullstack app, atm it's just an idea, but we'll see!
