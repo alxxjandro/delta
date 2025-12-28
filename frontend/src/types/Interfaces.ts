@@ -8,3 +8,5 @@ export interface IUser {
 export interface IAuthUser extends IUser {
   password: string
 }
+
+export type viewType = 'grid' | 'list'

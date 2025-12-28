@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { useForm } from '@mantine/form'
 import {
@@ -15,7 +16,13 @@ import {
 
 export default function Signup() {
   const navigate = useNavigate()
-  const { signup, loading, error } = useAuth()
+  const { signup, loading, error, isAuthenticated } = useAuth()
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard')
+    }
+  }, [isAuthenticated, navigate])
 
   const form = useForm({
     mode: 'uncontrolled',

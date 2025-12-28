@@ -9,7 +9,7 @@ export default function LandingPage() {
 
   return (
     <div>
-      <h1>Welcome to deltaDrive</h1>
+      <h1>Welcome to JobScoped</h1>
       <button onClick={handleDashboard}>Go to my dashbord!</button>
     </div>
   )
