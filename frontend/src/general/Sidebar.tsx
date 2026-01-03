@@ -1,6 +1,5 @@
 import type { NavbarButton } from '../types/Interfaces'
 import classes from '../styles/sidebar.module.css'
-import { MdAdd } from 'react-icons/md'
 import { Button, Stack } from '@mantine/core'
 import { RiSuitcaseLine } from 'react-icons/ri'
 import { useSectionStore } from '../zustand/useSectionStore'
@@ -23,16 +22,6 @@ export default function Sidebar() {
 
   return (
     <Stack px="sm" py="md" w="250" h="92dvh" className={classes.sidebarWrapper}>
-      <Button
-        variant="filled"
-        justify="flex-start"
-        color="primary.9"
-        leftSection={<MdAdd size={20} color="inherit" />}
-        className={classes.addButton}
-      >
-        New
-      </Button>
-
       <Stack gap={4}>
         {navbarSections.map((item) => (
           <Button

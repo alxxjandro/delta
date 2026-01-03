@@ -27,7 +27,7 @@ export default function Navbar() {
       <Group justify="space-between" px={20} py={16} h="8dvh">
         <Group>
           <Image src="/delta.svg" w={24} />
-          <Text size="xl" fw={600}>
+          <Text size="xl" fw={600} ml="-10">
             JobScoped
           </Text>
 

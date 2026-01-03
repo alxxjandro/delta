@@ -23,6 +23,7 @@ export type viewType = 'GRID' | 'LIST'
  * Navbar related interfaces
  */
 export type NavbarSection = 'resumes' | 'cover-letters' | 'applications'
+export type CreateType = 'resume' | 'cover-letter'
 
 export interface NavbarButton {
   id: NavbarSection
