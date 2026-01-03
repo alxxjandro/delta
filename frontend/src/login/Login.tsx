@@ -87,7 +87,7 @@ export default function Login() {
                 Sign Up
               </Button>
 
-              <Button type="submit" loading={loading}>
+              <Button type="submit" color="primary.7" loading={loading}>
                 Login
               </Button>
             </Group>

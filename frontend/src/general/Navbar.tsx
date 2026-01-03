@@ -1,14 +1,15 @@
-import { Avatar, Group, Text, Image, Textarea, ActionIcon, Divider } from '@mantine/core'
+import { Group, Text, Image, Textarea, ActionIcon, Divider } from '@mantine/core'
 import { IconSearch, IconList, IconLayoutGrid } from '@tabler/icons-react'
 import { useState, useEffect } from 'react'
 import { useViewModeStore } from '../zustand/useViewModeStore'
-import useAuthStore from '../zustand/useAuthStore'
+import { useAuth } from '../hooks/useAuth'
+import UserMenu from './UserMenu'
 
 export default function Navbar() {
   /**
    * States to hold the user, viewModes and display for the avatar pictures
    */
-  const { user } = useAuthStore()
+  const { user, logout } = useAuth()
   const { setView } = useViewModeStore()
   const [avatarName, setAvatarName] = useState<string | null>(null)
 
@@ -58,12 +59,10 @@ export default function Navbar() {
             <IconList size={18} color="rgba(0, 0, 0, 1)" />
           </ActionIcon>
 
-          <Avatar
-            variant="filled"
-            size="34"
-            radius="xl"
-            color="rgba(0, 0, 0, 1)"
-            name={avatarName || 'U'}
+          <UserMenu
+            avatarName={avatarName}
+            onSettings={() => console.log('go to settings')}
+            onLogout={logout}
           />
         </Group>
       </Group>

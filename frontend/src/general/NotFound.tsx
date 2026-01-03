@@ -16,11 +16,11 @@ export default function NotFound() {
             </Text>
           </Group>
 
-          <Text c="gray.4" ta="start">
+          <Text c="gray.7" lh={1.1} ta="start">
             The page you're looking for does not exist or was moved.
           </Text>
 
-          <Button onClick={handleGoHome} fullWidth>
+          <Button onClick={handleGoHome} color="primary.7" fullWidth>
             Go back home
           </Button>
         </Stack>

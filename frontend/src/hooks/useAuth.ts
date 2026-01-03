@@ -45,6 +45,7 @@ export function useAuth() {
   const logout = () => {
     AuthService.logout()
     setUser(null)
+    setError(null)
   }
 
   return {

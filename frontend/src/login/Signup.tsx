@@ -115,7 +115,7 @@ export default function Signup() {
               </Center>
             )}
 
-            <Button type="submit" fullWidth loading={loading} mt={30}>
+            <Button type="submit" color="primary.7" fullWidth loading={loading} mt={30}>
               Create account
             </Button>
           </Stack>
