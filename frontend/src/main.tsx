@@ -5,6 +5,7 @@ import NotFound from './general/NotFound'
 import Dashboard from './dashboard/Dashboard'
 import LandingPage from './lading/LandingPage'
 import PrivateRoute from './general/PrivateRoute'
+import NewCoverLetter from './general/newCoverLetters/NewCoverLetter'
 import ResumeFromImport from './general/newResumes/ResumeFromImport'
 import ResumeFromScratch from './general/newResumes/ResumeFromScratch'
 import ResumeFromTemplate from './general/newResumes/ResumeFromTemplate'
@@ -51,6 +52,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           element={
             <PrivateRoute>
               <ResumeFromTemplate />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/cover-letter/new"
+          element={
+            <PrivateRoute>
+              <NewCoverLetter />
             </PrivateRoute>
           }
         />
