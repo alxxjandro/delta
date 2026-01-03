@@ -1,15 +1,20 @@
-import type { viewType } from '../types/Interfaces'
 import { Avatar, Group, Text, Image, Textarea, ActionIcon, Divider } from '@mantine/core'
 import { IconSearch, IconList, IconLayoutGrid } from '@tabler/icons-react'
 import { useState, useEffect } from 'react'
+import { useViewModeStore } from '../zustand/useViewModeStore'
 import useAuthStore from '../zustand/useAuthStore'
 
 export default function Navbar() {
-  const user = useAuthStore((s) => s.user)
-
+  /**
+   * States to hold the user, viewModes and display for the avatar pictures
+   */
+  const { user } = useAuthStore()
+  const { setView } = useViewModeStore()
   const [avatarName, setAvatarName] = useState<string | null>(null)
-  const [viewMode, setViewMode] = useState<viewType>('grid')
 
+  /**
+   * Effect to update the avatar PFP every time the user changes
+   */
   useEffect(() => {
     if (user) {
       setAvatarName(user.username?.slice(0, 2).toLocaleUpperCase() ?? null)
@@ -40,7 +45,7 @@ export default function Navbar() {
             size="lg"
             aria-label="list view"
             color="rgba(235, 235, 235, 1)"
-            onClick={() => setViewMode('grid')}
+            onClick={() => setView('GRID')}
           >
             <IconLayoutGrid size={18} color="rgba(0, 0, 0, 1)" />
           </ActionIcon>
@@ -48,7 +53,7 @@ export default function Navbar() {
             size="lg"
             aria-label="list view"
             color="rgba(235, 235, 235, 1)"
-            onClick={() => setViewMode('list')}
+            onClick={() => setView('LIST')}
           >
             <IconList size={18} color="rgba(0, 0, 0, 1)" />
           </ActionIcon>

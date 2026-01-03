@@ -9,4 +9,4 @@ export interface IAuthUser extends IUser {
   password: string
 }
 
-export type viewType = 'grid' | 'list'
+export type viewType = 'GRID' | 'LIST'
