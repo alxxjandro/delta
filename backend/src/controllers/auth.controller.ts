@@ -1,4 +1,4 @@
-import { AuthService, SignupService } from '../services/authService'
+import { AuthService, SignupService } from '../services/auth.service'
 import { Request, Response } from 'express'
 import { HttpError } from '../errors'
 

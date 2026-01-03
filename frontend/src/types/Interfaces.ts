@@ -15,6 +15,19 @@ export interface IAuthUser extends IUser {
 }
 
 /**
+ * Cover letter related interfaces
+ */
+export interface ICoverLetter {
+  title: string
+  company: string
+  position: string
+  tone: ToneType
+  keypoints: string
+}
+
+export type ToneType = 'Professional' | 'Friendly' | 'Enthusiastic' | 'Confident'
+
+/**
  * Type for items layouts
  */
 export type viewType = 'GRID' | 'LIST'
