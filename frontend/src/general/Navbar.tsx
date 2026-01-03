@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Group justify="space-between" px={20} py={16}>
+      <Group justify="space-between" px={20} py={16} h="8dvh">
         <Group>
           <Image src="/delta.svg" w={24} />
           <Text size="xl" fw={600}>

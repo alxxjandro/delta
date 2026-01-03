@@ -1,0 +1,48 @@
+/* General wrapper */
+
+.sidebarWrapper {
+  border-right: solid 1px var(--mantine-color-gray-3) !important;
+}
+
+/*  Navbar buttons  */
+
+.navbarButton {
+  border-radius: var(--mantine-radius-md);
+  background-color: transparent;
+  color: var(--mantine-color-black);
+  font-weight: 600;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.navbarButton[data-variant='subtle']:hover {
+  background-color: var(--mantine-color-primary-9);
+  color: var(--mantine-color-white);
+}
+.navbarButton[data-variant='filled'] {
+  background-color: var(--mantine-color-gray-1);
+  color: var(--mantine-color-primary-9);
+}
+
+.navbarButton[data-variant='filled']:hover {
+  background-color: var(--mantine-color-gray-3);
+  color: var(--mantine-color-primary-9);
+}
+
+/* New + button */
+
+.addButton {
+  border-width: 2px !important;
+  border-color: transparent;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
+}
+
+.addButton:hover {
+  background-color: transparent !important;
+  color: var(--mantine-color-primary-9) !important;
+  border-color: var(--mantine-color-primary-9) !important;
+}
