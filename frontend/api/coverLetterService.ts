@@ -8,4 +8,10 @@ export default class CoverLetterService extends Request {
       body: JSON.stringify({ data }),
     })
   }
+
+  public static async getCoverLetters() {
+    return this.request('/cover-letter', {
+      method: 'GET',
+    })
+  }
 }

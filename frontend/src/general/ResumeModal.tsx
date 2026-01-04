@@ -37,10 +37,10 @@ export default function ResumeModal({ opened, onClose }: ResumeModalProps) {
       radius="md"
       title={
         <>
-          <Title mb={-6} order={2}>
+          <Text fw={800} size="26px" mb={0}>
             Create a new resume
-          </Title>
-          <Text c="dimmed" size="md">
+          </Text>
+          <Text c="dimmed" size="sm">
             Choose how you want to get started
           </Text>
         </>

@@ -21,8 +21,14 @@ export interface ICoverLetter {
   title: string
   company: string
   position: string
-  tone: ToneType
   keypoints: string
+  jobDescription: string
+  tone: ToneType
+}
+
+export interface ICoverLetterResponse extends ICoverLetter {
+  id: string
+  createdAt: string | Date
 }
 
 export type ToneType = 'Professional' | 'Friendly' | 'Enthusiastic' | 'Confident'
