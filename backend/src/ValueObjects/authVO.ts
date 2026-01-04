@@ -9,7 +9,8 @@ export interface ILoginResponse {
 }
 
 export interface ISignupRequest {
-  name: string
+  firstName: string
+  lastName: string
   username: string
   email: string
   password: string
@@ -18,7 +19,8 @@ export interface ISignupRequest {
 export interface IUser {
   id: string
   username: string
-  name: string
+  firstName: string
+  lastName: string
   email: string
   loginAttempts?: number
   lastAttemptAt?: Date | number

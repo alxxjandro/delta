@@ -81,14 +81,22 @@ export async function AuthService({
     user: {
       id: user.id,
       username: user.username,
-      name: user.name,
+      firstName: user.firstName,
+      lastName: user.lastName,
       email: user.email,
     } as IUser,
   }
 }
 
-export async function SignupService({ name, username, email, password }: ISignupRequest) {
-  if (!name || !username || !email || !password) {
+export async function SignupService({
+  firstName,
+  lastName,
+  username,
+  email,
+  password,
+}: ISignupRequest) {
+  if (!firstName || !lastName || !username || !email || !password) {
+    console.log(firstName, lastName, username, email, password)
     throw new HttpError('Missing details on request!', 400)
   }
 
@@ -112,7 +120,8 @@ export async function SignupService({ name, username, email, password }: ISignup
   const hashedPassword = await bcrypt.hash(password, 10)
   const newAccount = await prisma.users.create({
     data: {
-      name,
+      firstName,
+      lastName,
       username,
       email: normalizedEmail,
       password: hashedPassword,
@@ -122,7 +131,8 @@ export async function SignupService({ name, username, email, password }: ISignup
   return {
     id: newAccount.id,
     username: newAccount.username,
-    name: newAccount.name,
+    firstName: newAccount.firstName,
+    lastName: newAccount.lastName,
     email: newAccount.email,
   } as IUser
 }
