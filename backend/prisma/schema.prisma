@@ -29,6 +29,7 @@ model coverLetters {
   keypoints String
   content   String
   userId    String
+  jobDescription String
   user      users   @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

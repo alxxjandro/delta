@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { generateLetter } from '../services/letter.service'
+import { generateLetter, getCoverLettersByUser } from '../services/letter.service'
 
 export const generate = async (req: Request, res: Response) => {
   try {
@@ -16,5 +16,15 @@ export const generate = async (req: Request, res: Response) => {
     return res.status(error.statusCode || 500).json({
       message: error.message || 'Internal server error',
     })
+  }
+}
+
+export const getCoverLetters = async (req: Request, res: Response) => {
+  try {
+    const userId = (req as any).user?.id
+    const letters = await getCoverLettersByUser(userId)
+    res.status(200).json(letters)
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch cover letters' })
   }
 }

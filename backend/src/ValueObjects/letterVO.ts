@@ -3,9 +3,10 @@ export interface ICoverLetter {
   title: string
   company: string
   position: string
-  tone: ToneType
   keypoints: string
   content: string
+  jobDescription: string
+  tone: ToneType
   createdAt: Date | number
   updatedAt?: Date | number
 }
@@ -14,8 +15,9 @@ export interface ICoverLetterGenerateRequest {
   title: string
   company: string
   position: string
-  tone: ToneType
   keypoints: string
+  jobDescription: string
+  tone: ToneType
 }
 
 export interface ICoverLetterGenerateResponse {
