@@ -21,7 +21,7 @@ export default function Sidebar() {
   const { activeSection, setActiveSection } = useSectionStore()
 
   return (
-    <Stack px="sm" py="md" w="250" h="92dvh" className={classes.sidebarWrapper}>
+    <Stack px="sm" py="md" w="250" mih="92dvh" className={classes.sidebarWrapper}>
       <Stack gap={4}>
         {navbarSections.map((item) => (
           <Button

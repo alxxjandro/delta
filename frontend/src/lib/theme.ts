@@ -43,6 +43,19 @@ export const theme = createTheme({
       '#6b21a8',
       '#581c87',
     ],
+
+    white: [
+      '#f6f4ef',
+      '#f7f5f1',
+      '#f8f6f3',
+      '#f9f7f5',
+      '#faf9f7',
+      '#fbfaf9',
+      '#fcfbfa',
+      '#fdfcfc',
+      '#fefefe',
+      '#ffffff',
+    ],
   },
 
   primaryColor: 'primary',

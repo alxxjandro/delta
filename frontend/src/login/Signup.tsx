@@ -27,15 +27,19 @@ export default function Signup() {
   const form = useForm({
     mode: 'uncontrolled',
     initialValues: {
-      name: '',
+      firstName: '',
+      lastName: '',
       username: '',
       email: '',
       password: '',
       confirmPassword: '',
     },
     validate: {
-      name: (value) =>
-        value.trim().length < 4 ? 'Name must have at least 4 characters' : null,
+      firstName: (value) =>
+        value.trim().length <= 0 ? 'Your first name cannot be empty!' : null,
+
+      lastName: (value) =>
+        value.trim().length <= 4 ? 'Your last name cannot be empty!' : null,
 
       username: (value) =>
         value.trim().length < 3 ? 'Username must have at least 3 characters' : null,
@@ -53,7 +57,8 @@ export default function Signup() {
 
   const handleCreateAccount = form.onSubmit(async (values) => {
     const result = await signup({
-      name: values.name.trim(),
+      firstName: values.firstName.trim(),
+      lastName: values.lastName.trim(),
       username: values.username.trim(),
       email: values.email.trim(),
       password: values.password.trim(),
@@ -76,10 +81,16 @@ export default function Signup() {
 
             <Stack gap="sm">
               <TextInput
-                label="Name"
-                placeholder="Your name"
+                label="First name"
+                placeholder="Your first name"
                 withAsterisk
-                {...form.getInputProps('name')}
+                {...form.getInputProps('firstName')}
+              />
+              <TextInput
+                label="Last Name"
+                placeholder="Your last name"
+                withAsterisk
+                {...form.getInputProps('lastName')}
               />
               <TextInput
                 label="Username"

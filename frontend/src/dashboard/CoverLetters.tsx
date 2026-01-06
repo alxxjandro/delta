@@ -1,17 +1,13 @@
-import { Group, Stack, Title, Text, Button } from '@mantine/core'
+import { Group, Stack, Title, Text, Button, Box } from '@mantine/core'
 import { IoMdAdd } from 'react-icons/io'
 import { useNavigate } from 'react-router'
 import { useCoverLetters } from '../hooks/useCoverLetters'
 import { CoverLetterCard } from '../general/newCoverLetters/CoverLetterCards'
-import { useEffect } from 'react'
+import Spinner from '../general/Spinner'
 
 export default function CoverLetters() {
   const navigate = useNavigate()
   const { coverLetters, loading } = useCoverLetters()
-
-  useEffect(() => {
-    console.log(coverLetters)
-  }, [coverLetters])
 
   return (
     <Stack px={10}>
@@ -32,21 +28,14 @@ export default function CoverLetters() {
           New Cover Letter
         </Button>
       </Group>
-      <Stack gap="xs">
-        {coverLetters &&
-          coverLetters.map((letter) => (
-            <CoverLetterCard
-              key={letter.id}
-              letter={letter}
-              onClick={(l) => {
-                console.log('open letter', l.id)
-              }}
-              onPreview={(l) => {
-                console.log('preview letter', l.id)
-              }}
-            />
+      <Box pos="relative">
+        <Spinner isActive={loading} blur={false} />
+        <Group>
+          {coverLetters?.map((letter) => (
+            <CoverLetterCard key={letter.id} letter={letter} />
           ))}
-      </Stack>
+        </Group>
+      </Box>
     </Stack>
   )
 }

@@ -93,11 +93,7 @@ export default function Login() {
             </Group>
 
             <Center w="100%">
-              <Button
-                variant="transparent"
-                size="xs"
-                onClick={() => console.log('forgot password')}
-              >
+              <Button variant="transparent" size="xs">
                 Forgot your password?
               </Button>
             </Center>

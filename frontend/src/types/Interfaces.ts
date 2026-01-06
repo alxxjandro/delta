@@ -1,3 +1,4 @@
+import type { MantineColor } from '@mantine/core'
 import type { IconType } from 'react-icons'
 
 /**
@@ -5,7 +6,8 @@ import type { IconType } from 'react-icons'
  */
 export interface IUser {
   id: string
-  name: string
+  firstName: string
+  lastName: string
   username: string
   email: string
 }
@@ -28,10 +30,18 @@ export interface ICoverLetter {
 
 export interface ICoverLetterResponse extends ICoverLetter {
   id: string
+  content: string
   createdAt: string | Date
 }
 
 export type ToneType = 'Professional' | 'Friendly' | 'Enthusiastic' | 'Confident'
+
+export const toneColorMap: Record<ToneType, MantineColor> = {
+  Professional: 'red',
+  Friendly: 'blue',
+  Enthusiastic: 'yellow',
+  Confident: 'green',
+}
 
 /**
  * Type for items layouts

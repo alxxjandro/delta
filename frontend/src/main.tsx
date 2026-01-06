@@ -10,13 +10,16 @@ import ResumeFromImport from './general/newResumes/ResumeFromImport'
 import ResumeFromScratch from './general/newResumes/ResumeFromScratch'
 import ResumeFromTemplate from './general/newResumes/ResumeFromTemplate'
 import { theme } from './lib/theme'
+import { Notifications } from '@mantine/notifications'
 import { MantineProvider } from '@mantine/core'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import '@mantine/core/styles.css'
+import '@mantine/notifications/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <MantineProvider theme={theme}>
+    <Notifications position="top-right" />
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />

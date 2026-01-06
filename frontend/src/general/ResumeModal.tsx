@@ -1,4 +1,4 @@
-import { Modal, Stack, Title, Text, SimpleGrid, Card } from '@mantine/core'
+import { Modal, Stack, Text, SimpleGrid, Card } from '@mantine/core'
 import { useNavigate } from 'react-router-dom'
 import {
   IoDocumentTextOutline,
