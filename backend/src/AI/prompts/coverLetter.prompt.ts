@@ -11,6 +11,7 @@ export function coverLetterPrompt(data: ICoverLetterGenerateRequest): string {
 
     ---
     CONTEXT
+
     Cover letter title: ${title}
     Job title: ${position}
     Company: ${company}
@@ -23,49 +24,54 @@ export function coverLetterPrompt(data: ICoverLetterGenerateRequest): string {
     ${keypoints}
 
     ---
-
     HOW TO WRITE
 
-    - Write in a **natural, conversational professional tone**
-    - Vary sentence length (some short, some longer)
+    - Write in a natural, conversational professional tone
+    - Follow the provided tone closely
+    - Use clear, correct grammar and spelling
+    - Vary sentence length naturally
     - Use simple, everyday language where possible
-    - Avoid buzzwords, buzzphrases, and generic statements
-    - Avoid overly polished transitions
-    - Avoid abstract claims like “driving impact” or “delivering value”
-    - Do NOT over-explain
-    - Do NOT sound like AI, a template, or a career advisor
+    - Avoid buzzwords, clichés, and generic claims
+    - Avoid sounding polished for the sake of it
+    - Do not explain things unnecessarily
+    - Do not sound like AI, a template, or a career advisor
 
     ---
+    OPENING GUIDELINES
 
-    STYLE REFERENCE
+    Start with a greeting and a natural first sentence.
 
-    The style should feel similar to a real email someone would actually send:
-    personal, direct, clear, and honest.
+    Do NOT begin with:
+    - "I am writing to apply"
+    - "I am excited to apply"
+    - "I am writing to express my interest"
+
+    Instead, begin naturally by doing ONE of the following:
+    - Mention why the role or company caught your attention
+    - State interest in the role in a calm, direct way
+    - React briefly to the company, product, or mission
+    - Give a short personal context related to the role
 
     ---
-
     STRUCTURE
 
     - Greeting
-    - 3-4 short body paragraphs
-    - Simple, natural closing
-    - The letter must end naturally, without a signature
+    - 3 to 4 short body paragraphs
+    - A natural, forward-looking final sentence
 
     ---
-
     RULES
 
+    - Output ONLY the cover letter text
     - No emojis
     - No markdown
-    - No filler phrases
-    - Output ONLY the cover letter text
-    - Do NOT use placeholders like [Your Name]
-    - DO NOT include a signature or sender name
-    - DO NOT write closings like "Sincerely", "Best regards", or similar
-    - End the letter with a natural closing sentence, not a sign-off
+    - No placeholders of any kind
+    - Do NOT include a signature or sender name
+    - Do NOT include contact information
+    - Do NOT use sign-offs like "Sincerely", "Best regards", or similar
+    - End with a complete, natural sentence
 
     ---
-
     Write the cover letter now.
   `
 }

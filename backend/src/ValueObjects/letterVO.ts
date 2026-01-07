@@ -24,4 +24,16 @@ export interface ICoverLetterGenerateResponse {
   coverLetter: ICoverLetter
 }
 
+export interface ICoverLetterPDFRequest {
+  user: {
+    firstName: string
+    lastName: string
+    email: string
+  }
+  letter: {
+    content: string
+    createdAt: string
+  }
+}
+
 export type ToneType = 'Professional' | 'Friendly' | 'Enthusiastic' | 'Confident'
