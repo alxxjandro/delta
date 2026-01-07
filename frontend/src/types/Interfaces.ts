@@ -59,3 +59,18 @@ export interface NavbarButton {
   icon: IconType
   label: string
 }
+
+/**
+ * Interface for downloading the cover letters
+ */
+export interface ICoverLetterPDFPayload {
+  user: {
+    firstName: string
+    lastName: string
+    email: string
+  }
+  letter: {
+    content: string
+    createdAt: string
+  }
+}

@@ -17,7 +17,7 @@ export function CoverLetterCard({ letter }: CoverLetterCardProps) {
   const [opened, { open, close }] = useDisclosure(false)
 
   const handleEdit = () => {
-    console.log('edit: ', letter.id)
+    return null
   }
 
   return (

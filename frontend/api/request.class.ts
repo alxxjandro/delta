@@ -1,5 +1,11 @@
 const API_URL = import.meta.env.VITE_API_URL
 
+type ResponseType = 'json' | 'blob' | 'text'
+
+interface RequestOptions extends RequestInit {
+  responseType?: ResponseType
+}
+
 export default class Request {
   private static getAuthHeaders() {
     const headers: Record<string, string> = {
@@ -14,22 +20,34 @@ export default class Request {
     return headers
   }
 
-  protected static async request(endpoint: string, options: RequestInit = {}) {
+  protected static async request(endpoint: string, options: RequestOptions = {}) {
+    const { responseType = 'json', ...fetchOptions } = options
+
     const res = await fetch(`${API_URL}${endpoint}`, {
-      ...options,
+      ...fetchOptions,
       headers: {
         ...this.getAuthHeaders(),
-        ...(options.headers || {}),
+        ...(fetchOptions.headers || {}),
       },
     })
 
-    let data: any = null
-    data = await res.json()
-
     if (!res.ok) {
-      throw new Error(data?.message || 'API Error')
+      let errorMessage = 'API Error'
+      try {
+        const err = await res.json()
+        errorMessage = err?.message || errorMessage
+      } catch {}
+      throw new Error(errorMessage)
     }
 
-    return data
+    if (responseType === 'blob') {
+      return res
+    }
+
+    if (responseType === 'text') {
+      return await res.text()
+    }
+
+    return await res.json()
   }
 }
